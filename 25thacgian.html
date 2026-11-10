@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0F766E">
+<title>Chi hội 25 Thạc Gián – Đăng ký khám tầm soát ung thư</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --jade:#0F766E; --jade-mid:#14A08F; --jade-dark:#0A4F49;
+  --mint:#E7F4F0; --gold:#C9A227; --gold-soft:#FBF3D8;
+  --ink:#12302B; --muted:#5F7C75; --line:#D2E6E0; --bg:#F2FAF7;
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:22px 14px 40px;font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--ink);
+  background:radial-gradient(900px 420px at 88% -8%,#C9EDE2 0%,transparent 62%),
+             radial-gradient(720px 380px at -12% 8%,#F7EDCB 0%,transparent 58%),var(--bg)}
+.app{max-width:840px;margin:0 auto;background:#fff;border-radius:22px;overflow:hidden;
+  box-shadow:0 20px 50px rgba(10,79,73,.16);border:1px solid #E0F0EB}
+.hero{position:relative;text-align:center;padding:26px 22px 28px;color:#fff;overflow:hidden;
+  background:linear-gradient(135deg,#127C72 0%,#0F766E 45%,#0A4F49 100%)}
+.hero::before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.06);top:-140px;right:-90px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--gold),#EFD27A,var(--gold))}
+.hero-logo{margin:0 auto 14px;background:transparent;box-shadow:none;position:relative;display:flex;justify-content:center}
+.hero-logo img{width:110px;height:110px;object-fit:contain;display:block;filter:drop-shadow(0 4px 8px rgba(0,0,0,.2))}
+.hero-org{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;margin:0 0 8px;color:#BDE7DD;font-weight:500;position:relative}
+.hero h1{font-family:'Noto Serif',serif;font-size:23px;line-height:1.3;margin:0 0 10px;letter-spacing:.02em;position:relative}
+.hero h1 .chip{display:inline-block;background:var(--gold);color:#3B2E00;font-size:15px;padding:2px 10px;border-radius:8px;margin-right:6px;vertical-align:middle;font-family:'Be Vietnam Pro',sans-serif;font-weight:700}
+.hero-sub{font-size:13.5px;margin:0;color:#CDEFE7;position:relative}
+
+.status{margin:18px 22px 0;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,#EAF7F3,#F8FCFB);border:1.5px solid #BFE3D9;display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.stat{text-align:center}
+.stat-num{font-family:'Noto Serif',serif;font-size:32px;font-weight:700;color:var(--jade);line-height:1}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px;font-weight:500}
+.stat-divider{width:1px;height:44px;background:#BFE3D9}
+
+form{padding:20px 22px 6px}
+.hint{background:var(--gold-soft);border:1px solid #EBD98F;color:#6B5305;border-radius:13px;padding:12px 15px;font-size:13.5px;line-height:1.6;margin-bottom:18px}
+.hint b{color:#5A4504}
+.form-group{margin-bottom:15px;min-width:0}
+label{display:block;font-weight:600;font-size:13.5px;margin-bottom:6px;color:var(--jade-dark)}
+label .opt{font-weight:400;color:var(--muted)}
+label .req{color:#C0264B}
+input[type=text],input[type=password],input[type=date],select{width:100%;padding:11px 13px;font:inherit;font-size:15px;color:var(--ink);background:#F6FBF9;border:1.5px solid var(--line);border-radius:11px;transition:.18s}
+select{appearance:auto}
+input:focus,select:focus{outline:none;border-color:var(--jade-mid);background:#fff;box-shadow:0 0 0 4px rgba(20,160,143,.15)}
+input:disabled{opacity:.55;cursor:not-allowed;background:#EEF2F0}
+button{font:inherit;cursor:pointer;border:none;transition:.18s}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.grid .full{grid-column:1/-1}
+
+.person{border:1.5px solid var(--line);border-radius:16px;padding:16px 16px 4px;margin-bottom:16px;background:linear-gradient(180deg,#FBFFFD,#fff)}
+.person-title{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.person-title .num{width:29px;height:29px;border-radius:9px;flex:0 0 auto;background:linear-gradient(135deg,var(--jade-mid),var(--jade));color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.person-title b{font-size:15px;color:var(--jade-dark);font-weight:600}
+
+details.med{margin:2px 0 14px;border-top:1px dashed var(--line);padding-top:10px}
+details.med summary{cursor:pointer;font-weight:600;color:var(--jade);font-size:13.5px;padding:4px 0 10px}
+details.med summary:hover{color:var(--jade-dark)}
+
+.btn{width:100%;padding:13px;border-radius:12px;font-size:16px;font-weight:600}
+.btn-primary{background:linear-gradient(135deg,var(--jade-mid),#0E6B62);color:#fff;box-shadow:0 8px 18px rgba(15,118,110,.32)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-primary:disabled{background:#B9C9C5;box-shadow:none;cursor:not-allowed;transform:none}
+.btn-admin{background:#fff;color:var(--jade);border:1.5px solid var(--jade);margin:12px 22px 22px;width:calc(100% - 44px)}
+.btn-admin:hover{background:var(--jade);color:#fff}
+
+#message{display:none;margin:6px 22px 20px;padding:13px 15px;border-radius:12px;text-align:center;font-weight:500;font-size:14.5px;line-height:1.5}
+.success{background:#E3F5EC;color:#0C5C43;border:1px solid #B6E2CE}
+.error{background:#FCE4E8;color:#8E1F3A;border:1px solid #F3BFCB}
+
+.foot{margin:0;padding:14px 22px 20px;text-align:center;font-size:12px;color:#94ADA7;border-top:1px solid #EDF5F2}
+
+/* ===== ADMIN ===== */
+.admin{display:none;max-width:1180px;margin:24px auto 0;background:#fff;border-radius:22px;box-shadow:0 20px 50px rgba(10,79,73,.16);overflow:hidden;border:1px solid #E0F0EB}
+.admin.open{display:block}
+.admin-top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:18px 22px;background:var(--mint);border-bottom:3px solid var(--gold)}
+.admin-top h4{margin:0;font-family:'Noto Serif',serif;font-size:18px;color:var(--jade-dark)}
+.admin-top small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.tools button{padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;background:#fff;color:var(--jade);border:1.5px solid var(--jade)}
+.tools button:hover{background:var(--jade);color:#fff}
+
+.transfer-section{padding:16px 22px;border-bottom:1px solid var(--line);background:#FAFEFC}
+.transfer-info{font-size:13.5px;color:var(--muted);min-height:22px;margin-bottom:12px;padding:10px 14px;border-radius:10px;background:#F6FBF9;border:1px dashed #BFE3D9;line-height:1.5}
+.transfer-info.ok{background:#E3F5EC;border-color:#B6E2CE;color:#0C5C43;border-style:solid}
+.transfer-info.warn{background:#FBF3D8;border-color:#EBD98F;color:#6B5305;border-style:solid}
+.transfer-info.err{background:#FCE4E8;border-color:#F3BFCB;color:#8E1F3A;border-style:solid}
+.transfer-actions{display:flex;gap:8px;flex-wrap:wrap}
+.transfer-actions button{padding:11px 18px;border-radius:10px;font-weight:600;font-size:14px}
+.btn-transfer{background:linear-gradient(135deg,#0F766E,#0A4F49);color:#fff;box-shadow:0 6px 14px rgba(15,118,110,.28)}
+.btn-transfer:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-transfer:disabled{background:#B9C9C5;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-danger{background:#fff;color:#B4232C;border:1.5px solid #B4232C}
+.btn-danger:hover{background:#B4232C;color:#fff}
+.btn-warn{background:#fff;color:#8B5A00;border:1.5px solid #C9A227}
+.btn-warn:hover{background:#C9A227;color:#fff}
+.transfer-result{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:13px;line-height:1.6;white-space:pre-line;max-height:240px;overflow-y:auto}
+.transfer-result.ok{display:block;background:#E3F5EC;border:1px solid #B6E2CE;color:#0C5C43}
+.transfer-result.warn{display:block;background:#FBF3D8;border:1px solid #EBD98F;color:#6B5305}
+.transfer-result.err{display:block;background:#FCE4E8;border:1px solid #F3BFCB;color:#8E1F3A}
+
+.table-wrap{overflow-x:auto;padding:0 6px 12px}
+table{border-collapse:collapse;width:100%;min-width:820px;font-size:13.5px}
+th{background:var(--jade-dark);color:#fff;text-align:left;padding:11px 10px;font-weight:600;position:sticky;top:0;white-space:nowrap}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:middle}
+th:first-child,td:first-child{text-align:center;width:40px}
+th:last-child,td:last-child{text-align:center;white-space:nowrap}
+tbody tr:nth-child(even){background:#FAFEFC}
+tbody tr:hover{background:var(--mint)}
+tbody tr.transferred{opacity:.72}
+input[type=checkbox]{width:17px;height:17px;accent-color:var(--jade);cursor:pointer}
+.badge{display:inline-block;padding:3px 9px;border-radius:99px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.badge-ok{background:#D4F0E3;color:#0C5C43}
+.badge-wait{background:#FBF3D8;color:#6B5305}
+.btn-row{display:inline-flex;gap:4px}
+.btn-s{padding:5px 10px;border-radius:7px;font-size:12px;font-weight:600}
+.btn-s-edit{background:#E7F4F0;color:var(--jade);border:1px solid #BFE3D9}
+.btn-s-edit:hover{background:var(--jade);color:#fff}
+.btn-s-del{background:#FCE4E8;color:#8E1F3A;border:1px solid #F3BFCB}
+.btn-s-del:hover{background:#B4232C;color:#fff}
+.empty{padding:36px 20px;text-align:center;color:var(--muted);font-size:14px}
+
+/* ===== Modal ===== */
+.overlay{position:fixed;inset:0;background:rgba(12,48,43,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:20;backdrop-filter:blur(3px);overflow-y:auto}
+.overlay.open{display:flex}
+.modal{background:#fff;border-radius:18px;padding:26px;width:100%;max-width:400px;box-shadow:0 24px 60px rgba(0,0,0,.3);margin:auto;animation:pop .22s ease}
+@keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+.modal-lg{max-width:640px}
+.modal-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.modal-icon{width:42px;height:42px;border-radius:12px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#E7F4F0,#CFE9E2);color:var(--jade)}
+.modal-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.modal h4{font-family:'Noto Serif',serif;margin:0;font-size:19px;color:var(--jade-dark)}
+.modal p{margin:0 0 16px;color:var(--muted);font-size:13.5px;line-height:1.5}
+.modal .row{display:flex;gap:10px;margin-top:16px}
+.modal .row button{flex:1;padding:12px;border-radius:11px;font-weight:600;font-size:15px}
+.btn-ghost{background:var(--mint);color:var(--jade-dark)}
+.btn-ghost:hover{background:#CFE9E2}
+.btn-primary.sm{margin-top:0;font-size:15px;padding:12px}
+.err-text{color:#B4232C;font-size:13px;margin-top:8px;min-height:18px}
+.modal input,.modal select{background:#F6FBF9}
+
+/* ===== Password toggle ===== */
+.pw-wrap{position:relative}
+.pw-wrap input{padding-right:52px}
+.pw-toggle{position:absolute;top:50%;right:6px;transform:translateY(-50%);width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:transparent;color:var(--muted);border-radius:10px;padding:0}
+.pw-toggle:hover{color:var(--jade);background:var(--mint)}
+.pw-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pw-toggle .eye-off{display:none}
+.pw-toggle.on .eye{display:none}
+.pw-toggle.on .eye-off{display:block}
+
+@media(max-width:600px){
+  body{padding:14px 10px 30px}
+  .app,.admin{border-radius:18px}
+  .hero{padding:22px 16px 24px}
+  .hero h1{font-size:19px}
+  .hero h1 .chip{font-size:13px;padding:2px 8px}
+  .status{margin:14px 14px 0;padding:14px}
+  form{padding:18px 15px 4px}
+  #message{margin:6px 14px 16px}
+  .btn-admin{margin:12px 14px 18px;width:calc(100% - 28px)}
+  .grid{grid-template-columns:1fr}
+  .person{padding:14px 13px 4px}
+  .admin-top,.transfer-section{padding-left:14px;padding-right:14px}
+  .transfer-actions{flex-direction:column}
+  .transfer-actions button{width:100%}
+  .stat-num{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="hero">
+    <div class="hero-logo"><img src="icon.png" alt="Logo" onerror="this.parentNode.style.display='none'"></div>
+    <p class="hero-org">Hội Liên hiệp Phụ nữ phường Thanh Khê</p>
+    <h1>CHI HỘI 25 THẠC GIÁN</h1>
+    <p class="hero-sub">Đăng ký danh sách phụ nữ tham gia khám tầm soát ung thư miễn phí</p>
+  </header>
+
+  <div class="status" id="statusCard">
+    <div class="stat"><div class="stat-num" id="numTotal">–</div><div class="stat-label">Người đã nhập</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><div class="stat-num" id="numTransferred">–</div><div class="stat-label">Đã chuyển phường</div></div>
+  </div>
+
+  <form id="dataForm" onsubmit="handleSubmit(event)" novalidate>
+    <div class="hint">
+      Mỗi người tự nhập thông tin của mình. Độ tuổi <b>35 đến 60</b>. Có thể nhập giúp cho chị em đúng đối tượng.<br>
+      Hạn chót nộp danh sách: <b>12/11/2026</b>. Mục có dấu <span style="color:#C0264B">*</span> là bắt buộc.
+    </div>
+
+    <div class="person">
+      <div class="person-title"><span class="num">1</span><b>Thông tin cá nhân</b></div>
+      <div class="grid">
+        <div class="form-group full">
+          <label>Họ và tên <span class="req">*</span></label>
+          <input type="text" data-f="hoTen" placeholder="Nhập họ và tên…" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Ngày, tháng, năm sinh <span class="req">*</span> <span class="opt">(35–60 tuổi)</span></label>
+          <input type="date" data-f="ngaySinh">
+        </div>
+        <div class="form-group">
+          <label>Số CCCD <span class="req">*</span></label>
+          <input type="text" data-f="cccd" inputmode="numeric" maxlength="12" placeholder="12 chữ số" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Số điện thoại <span class="req">*</span></label>
+          <input type="text" data-f="sdt" inputmode="tel" maxlength="10" placeholder="10 chữ số" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Tổ dân phố <span class="req">*</span></label>
+          <input type="text" data-f="toDanPho" value="25 Thạc Gián">
+        </div>
+        <div class="form-group full">
+          <label>Phường <span class="req">*</span></label>
+          <input type="text" data-f="phuong" value="Thanh Khê">
+        </div>
+      </div>
+      <details class="med">
+        <summary>Thông tin y tế liên quan (nếu có)</summary>
+        <div class="grid">
+          <div class="form-group"><label>Tiền sử bệnh cá nhân</label><input type="text" data-f="tienSuBenh" placeholder="Nếu có…"></div>
+          <div class="form-group"><label>Tiền sử sản phụ khoa</label><input type="text" data-f="tienSuSanKhoa" placeholder="Nếu có…"></div>
+          <div class="form-group full">
+            <label>Đã từng tầm soát ung thư chưa?</label>
+            <select data-f="daTamSoat"><option value="">-- Chọn --</option><option>Có</option><option>Không</option></select>
+          </div>
+          <div class="form-group"><label>Lần tầm soát gần nhất <span class="opt">(năm/thời gian)</span></label><input type="text" data-f="lanGanNhat" placeholder="Ví dụ: 2025"></div>
+          <div class="form-group"><label>Kết quả tầm soát gần nhất</label><input type="text" data-f="ketQua" placeholder="Nếu có…"></div>
+          <div class="form-group full"><label>ID sổ khám bệnh điện tử <span class="opt">(nếu có)</span></label><input type="text" data-f="idSo" placeholder="Nếu có…"></div>
+        </div>
+      </details>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="btnSubmit">Gửi thông tin</button>
+  </form>
+
+  <div id="message"></div>
+
+  <button type="button" class="btn btn-admin" onclick="openLogin()">Quản trị chi hội</button>
+
+  <p class="foot">Phiên bản dành riêng cho Chi hội 25 · Thạc Gián</p>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<section class="admin" id="adminPanel">
+  <div class="admin-top">
+    <div><h4>Quản trị Chi hội 25 Thạc Gián</h4><small id="adminCount"></small></div>
+    <div class="tools">
+      <button type="button" onclick="loadList()">Làm mới</button>
+      <button type="button" onclick="logout()">Đóng</button>
+    </div>
+  </div>
+
+  <div class="transfer-section">
+    <div class="transfer-info" id="phuongInfo">Đang kiểm tra danh sách phường đã nhận…</div>
+    <div class="transfer-actions">
+      <button type="button" class="btn-transfer" id="btnTransfer" onclick="transferSelected()">Gửi cho phường</button>
+      <button type="button" class="btn-warn" onclick="clearTransferredSelected()">Bỏ đánh dấu đã chuyển</button>
+      <button type="button" class="btn-danger" onclick="deleteSelected()">Xóa người đã chọn</button>
+      <button type="button" class="btn-danger" onclick="deleteAllRows()">Xóa tất cả</button>
+    </div>
+    <div class="transfer-result" id="transferResult"></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th><input type="checkbox" id="checkAll" onchange="toggleAll(this)"></th>
+        <th>Họ và tên</th>
+        <th>Ngày sinh</th>
+        <th>CCCD</th>
+        <th>SĐT</th>
+        <th>Tổ dân phố</th>
+        <th>Đã chuyển</th>
+        <th>Thao tác</th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="empty" id="emptyText" style="display:none">Chưa có người nào được nhập.</div>
+  </div>
+</section>
+
+<!-- Login modal -->
+<div class="overlay" id="loginBox" onclick="if(event.target===this)closeLogin()">
+  <div class="modal" role="dialog" aria-labelledby="loginTitle">
+    <div class="modal-head">
+      <div class="modal-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <h4 id="loginTitle">Quản trị Chi hội 25</h4>
+    </div>
+    <p>Nhập mật khẩu để xem và chỉnh sửa danh sách đã nhập.</p>
+    <div class="pw-wrap">
+      <input type="password" id="adminPass" placeholder="Nhập mật khẩu quản trị" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+      <button type="button" class="pw-toggle" id="pwToggle" onclick="togglePass()" aria-label="Hiện mật khẩu" title="Hiện mật khẩu">
+        <svg class="eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg class="eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.9 10.9 0 0 1 12 19C5 19 1 12 1 12a18.5 18.5 0 0 1 5.06-5.94M9.9 4.24A10.9 10.9 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      </button>
+    </div>
+    <div class="err-text" id="loginErr"></div>
+    <div class="row">
+      <button type="button" class="btn-ghost" onclick="closeLogin()">Hủy</button>
+      <button type="button" class="btn-primary sm" id="btnLogin" onclick="doLogin()">Đăng nhập</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit modal -->
+<div class="overlay" id="editBox" onclick="if(event.target===this)closeEdit()">
+  <div class="modal modal-lg" role="dialog">
+    <div class="modal-head">
+      <div class="modal-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <h4>Sửa thông tin</h4>
+    </div>
+    <div class="grid">
+      <div class="form-group full"><label>Họ và tên</label><input type="text" id="e_hoTen"></div>
+      <div class="form-group"><label>Ngày sinh</label><input type="date" id="e_ngaySinh"></div>
+      <div class="form-group"><label>CCCD</label><input type="text" id="e_cccd" maxlength="12" inputmode="numeric"></div>
+      <div class="form-group"><label>SĐT</label><input type="text" id="e_sdt" maxlength="10" inputmode="tel"></div>
+      <div class="form-group"><label>Tổ dân phố</label><input type="text" id="e_toDanPho"></div>
+      <div class="form-group"><label>Phường</label><input type="text" id="e_phuong"></div>
+      <div class="form-group full"><label>Tiền sử bệnh</label><input type="text" id="e_tienSuBenh"></div>
+      <div class="form-group full"><label>Tiền sử sản khoa</label><input type="text" id="e_tienSuSanKhoa"></div>
+      <div class="form-group"><label>Đã tầm soát</label><select id="e_daTamSoat"><option value="">--</option><option>Có</option><option>Không</option></select></div>
+      <div class="form-group"><label>Lần gần nhất</label><input type="text" id="e_lanGanNhat"></div>
+      <div class="form-group"><label>Kết quả</label><input type="text" id="e_ketQua"></div>
+      <div class="form-group"><label>ID sổ</label><input type="text" id="e_idSo"></div>
+    </div>
+    <div class="err-text" id="editErr"></div>
+    <div class="row">
+      <button type="button" class="btn-ghost" onclick="closeEdit()">Hủy</button>
+      <button type="button" class="btn-primary sm" id="btnSaveEdit" onclick="saveEdit()">Lưu</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== CẤU HÌNH ===== */
+// Link Web App (đuôi /exec) của code.gs CHI HỘI
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzeNE2-enzHN9TZ2K4uJuqRoEg_stHMYP38fk5NMAeu8IY79kcMEEi9TqUVyL0yNOtoZw/exec';
+
+// Link Web App (đuôi /exec) của PHƯỜNG — nhúng sẵn
+const PHUONG_URL = 'https://script.google.com/macros/s/AKfycbwK-MgJDxQe3eJtMNeDkQAq5p96OMsjWVimCBEUkVXZ5YmXbXmDHl_bVJY2cq0LebmGxA/exec';
+
+const CHI_HOI = '25 THẠC GIÁN';
+const TUOI_MIN = 35, TUOI_MAX = 60;
+
+let adminPassword = '';
+let currentRows = [];
+let editingMa = '';
+let loaded = false;
+
+const $ = id => document.getElementById(id);
+const p2 = n => String(n).padStart(2, '0');
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function post(payload){
+  return fetch(WEB_APP_URL, {
+    method: 'POST',
+    headers: {'Content-Type': 'text/plain;charset=utf-8'},
+    body: JSON.stringify(payload)
+  }).then(r => r.json());
+}
+
+/* ===== Ngày sinh & tuổi ===== */
+function dateBounds(){
+  const t = new Date();
+  const max = new Date(t.getFullYear() - TUOI_MIN, t.getMonth(), t.getDate());
+  const min = new Date(t.getFullYear() - TUOI_MAX - 1, t.getMonth(), t.getDate() + 1);
+  const f = d => d.getFullYear() + '-' + p2(d.getMonth() + 1) + '-' + p2(d.getDate());
+  return {min: f(min), max: f(max)};
+}
+function ageOf(iso){
+  const [y, m, d] = iso.split('-').map(Number), n = new Date();
+  let a = n.getFullYear() - y;
+  if (n.getMonth() + 1 < m || (n.getMonth() + 1 === m && n.getDate() < d)) a--;
+  return a;
+}
+function isoToVn(s){
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s||'').trim());
+  if (!m) return s;
+  return m[3] + '/' + m[2] + '/' + m[1];
+}
+function vnToIso(s){
+  const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(String(s||'').trim());
+  if (!m) return '';
+  return m[3] + '-' + m[2] + '-' + m[1];
+}
+
+/* ===== Khởi tạo input ngày sinh ===== */
+(function initDateInput(){
+  const b = dateBounds();
+  const el = document.querySelector('[data-f=ngaySinh]');
+  el.min = b.min; el.max = b.max;
+  document.querySelectorAll('[data-f=cccd],[data-f=sdt]').forEach(i =>
+    i.addEventListener('input', () => { i.value = i.value.replace(/\D/g,''); }));
+  const sel = document.querySelector('[data-f=daTamSoat]');
+  sel.addEventListener('change', () => {
+    const no = sel.value === 'Không';
+    ['lanGanNhat','ketQua'].forEach(k => {
+      const e = document.querySelector(`[data-f=${k}]`);
+      e.disabled = no; if (no) e.value = '';
+    });
+  });
+})();
+
+/* ===== Trạng thái ===== */
+function updateStatus(d){
+  loaded = true;
+  $('numTotal').textContent = d.count;
+  $('numTransferred').textContent = d.transferred;
+}
+function loadStatus(){
+  if (WEB_APP_URL.indexOf('http') !== 0) { updateStatus({count:0, transferred:0}); return; }
+  post({action:'status'}).then(d => { if (d.success) updateStatus(d); }).catch(() => updateStatus({count:0, transferred:0}));
+}
+
+/* ===== Gửi form ===== */
+function collect(){
+  const o = {};
+  document.querySelectorAll('#dataForm [data-f]').forEach(e => o[e.dataset.f] = e.value.trim());
+  return o;
+}
+function validateOne(p){
+  if (!p.hoTen) return 'Chưa nhập họ và tên.';
+  if (!p.ngaySinh) return 'Chưa nhập ngày sinh.';
+  const a = ageOf(p.ngaySinh);
+  if (a < TUOI_MIN || a > TUOI_MAX) return 'Độ tuổi phải từ ' + TUOI_MIN + ' đến ' + TUOI_MAX + ' (hiện ' + a + ' tuổi).';
+  if (!/^\d{12}$/.test(p.cccd)) return 'Số CCCD phải gồm 12 chữ số.';
+  if (!/^0\d{9}$/.test(p.sdt)) return 'Số điện thoại phải gồm 10 chữ số, bắt đầu bằng 0.';
+  if (!p.toDanPho) return 'Chưa nhập tổ dân phố.';
+  if (!p.phuong) return 'Chưa nhập phường.';
+  return '';
+}
+function show(msg, ok){
+  const m = $('message');
+  m.style.display = 'block'; m.className = ok ? 'success' : 'error'; m.textContent = msg;
+  m.scrollIntoView({behavior:'smooth', block:'center'});
+}
+function resetForm(){
+  document.querySelectorAll('#dataForm [data-f]').forEach(el => {
+    if (el.dataset.f === 'toDanPho') el.value = '25 Thạc Gián';
+    else if (el.dataset.f === 'phuong') el.value = 'Thanh Khê';
+    else el.value = '';
+  });
+  ['lanGanNhat','ketQua'].forEach(k => document.querySelector(`[data-f=${k}]`).disabled = false);
+  document.querySelector('[data-f=hoTen]').focus();
+}
+function handleSubmit(e){
+  e.preventDefault();
+  const p = collect();
+  const err = validateOne(p);
+  if (err){ show(err, false); return; }
+  if (!confirm('Gửi thông tin của ' + p.hoTen + '?\nSau khi gửi sẽ không tự sửa được.')) return;
+
+  const btn = $('btnSubmit');
+  btn.disabled = true; btn.textContent = 'Đang gửi…';
+  $('message').style.display = 'none';
+
+  const payload = {action:'submit', nguoi: Object.assign({}, p, {ngaySinh: isoToVn(p.ngaySinh)})};
+  post(payload).then(d => {
+    show(d.message, d.success);
+    if (d.success){ resetForm(); loadStatus(); }
+  }).catch(err => {
+    show('Lỗi kết nối mạng hoặc sai URL API!', false);
+    console.error(err);
+  }).finally(() => { btn.disabled = false; btn.textContent = 'Gửi thông tin'; });
+}
+
+/* ===== Login ===== */
+function openLogin(){
+  $('loginErr').textContent = '';
+  $('adminPass').value = '';
+  $('adminPass').type = 'password';
+  $('pwToggle').classList.remove('on');
+  $('pwToggle').setAttribute('aria-label','Hiện mật khẩu');
+  $('pwToggle').title = 'Hiện mật khẩu';
+  $('loginBox').classList.add('open');
+  setTimeout(() => $('adminPass').focus(), 60);
+}
+function closeLogin(){ $('loginBox').classList.remove('open'); }
+function togglePass(){
+  const i = $('adminPass'), b = $('pwToggle'), show = i.type === 'password';
+  i.type = show ? 'text' : 'password';
+  b.classList.toggle('on', show);
+  const t = show ? 'Ẩn mật khẩu' : 'Hiện mật khẩu';
+  b.setAttribute('aria-label', t); b.title = t;
+  i.focus();
+}
+function doLogin(){
+  const pass = $('adminPass').value, btn = $('btnLogin'), err = $('loginErr');
+  if (!pass){ err.textContent = 'Vui lòng nhập mật khẩu.'; return; }
+  btn.disabled = true; btn.textContent = 'Đang kiểm tra…'; err.textContent = '';
+  post({action:'list', password: pass}).then(d => {
+    if (!d.success){ err.textContent = d.message || 'Mật khẩu không đúng!'; return; }
+    adminPassword = pass; closeLogin(); renderAdmin(d.rows);
+    const panel = $('adminPanel'); panel.classList.add('open'); panel.scrollIntoView({behavior:'smooth'});
+    checkPhuong();
+  }).catch(() => { err.textContent = 'Không kết nối được máy chủ.'; })
+  .finally(() => { btn.disabled = false; btn.textContent = 'Đăng nhập'; });
+}
+function logout(){
+  adminPassword = ''; currentRows = [];
+  $('adminPanel').classList.remove('open');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function loadList(){
+  post({action:'list', password: adminPassword}).then(d => {
+    if (d.success) renderAdmin(d.rows); else alert(d.message);
+  }).catch(() => alert('Không tải được dữ liệu.'));
+}
+
+function renderAdmin(rows){
+  currentRows = rows || [];
+  $('tbody').innerHTML = currentRows.map(r => {
+    const ma = r[0], hoTen = r[1], ngaySinh = r[2], cccd = r[3], sdt = r[4], to = r[5];
+    const daChuyen = String(r[14]).trim() === 'Có';
+    const cb = daChuyen
+      ? '<input type="checkbox" disabled title="Đã chuyển">'
+      : `<input type="checkbox" data-ma="${esc(ma)}" onchange="updateTransferBtn()">`;
+    return `<tr class="${daChuyen?'transferred':''}">
+      <td>${cb}</td>
+      <td>${esc(hoTen)}</td>
+      <td>${esc(ngaySinh)}</td>
+      <td>${esc(cccd)}</td>
+      <td>${esc(sdt)}</td>
+      <td>${esc(to)}</td>
+      <td>${daChuyen ? '<span class="badge badge-ok">Đã chuyển</span>' : '<span class="badge badge-wait">Chưa chuyển</span>'}</td>
+      <td>
+        <span class="btn-row">
+          <button class="btn-s btn-s-edit" onclick="openEdit('${esc(ma)}')">Sửa</button>
+          <button class="btn-s btn-s-del" onclick="deleteOne('${esc(ma)}')">Xóa</button>
+        </span>
+      </td>
+    </tr>`;
+  }).join('');
+  $('emptyText').style.display = currentRows.length ? 'none' : 'block';
+  const total = currentRows.length;
+  const transferred = currentRows.filter(r => String(r[14]).trim() === 'Có').length;
+  $('adminCount').textContent = total + ' người đã nhập · ' + transferred + ' đã chuyển phường';
+  $('checkAll').checked = false;
+  updateTransferBtn();
+}
+function toggleAll(cb){
+  document.querySelectorAll('#tbody input[type=checkbox]:not(:disabled)').forEach(c => c.checked = cb.checked);
+  updateTransferBtn();
+}
+function getSelected(){
+  return [...document.querySelectorAll('#tbody input[type=checkbox]:checked:not(:disabled)')].map(c => c.dataset.ma);
+}
+function updateTransferBtn(){
+  const n = getSelected().length;
+  $('btnTransfer').disabled = n === 0;
+  $('btnTransfer').textContent = n ? ('Gửi ' + n + ' người cho phường') : 'Gửi cho phường';
+}
+
+/* ===== Sửa ===== */
+function openEdit(ma){
+  const r = currentRows.find(x => String(x[0]) === String(ma));
+  if (!r) return;
+  editingMa = ma;
+  $('editErr').textContent = '';
+  const b = dateBounds();
+  $('e_hoTen').value = r[1];
+  $('e_ngaySinh').value = vnToIso(r[2]);
+  $('e_ngaySinh').min = b.min; $('e_ngaySinh').max = b.max;
+  $('e_cccd').value = r[3];
+  $('e_sdt').value = r[4];
+  $('e_toDanPho').value = r[5];
+  $('e_phuong').value = r[6];
+  $('e_tienSuBenh').value = r[7];
+  $('e_tienSuSanKhoa').value = r[8];
+  $('e_daTamSoat').value = r[9];
+  $('e_lanGanNhat').value = r[10];
+  $('e_ketQua').value = r[11];
+  $('e_idSo').value = r[12];
+  $('editBox').classList.add('open');
+  setTimeout(() => $('e_hoTen').focus(), 60);
+}
+function closeEdit(){ $('editBox').classList.remove('open'); editingMa = ''; }
+function saveEdit(){
+  const row = {
+    ma: editingMa,
+    hoTen: $('e_hoTen').value.trim(),
+    ngaySinh: isoToVn($('e_ngaySinh').value),
+    cccd: $('e_cccd').value.trim(),
+    sdt: $('e_sdt').value.trim(),
+    toDanPho: $('e_toDanPho').value.trim(),
+    phuong: $('e_phuong').value.trim(),
+    tienSuBenh: $('e_tienSuBenh').value.trim(),
+    tienSuSanKhoa: $('e_tienSuSanKhoa').value.trim(),
+    daTamSoat: $('e_daTamSoat').value,
+    lanGanNhat: $('e_lanGanNhat').value.trim(),
+    ketQua: $('e_ketQua').value.trim(),
+    idSo: $('e_idSo').value.trim()
+  };
+  const err = validateOne({hoTen: row.hoTen, ngaySinh: $('e_ngaySinh').value, cccd: row.cccd, sdt: row.sdt, toDanPho: row.toDanPho, phuong: row.phuong});
+  if (err){ $('editErr').textContent = err; return; }
+
+  const btn = $('btnSaveEdit');
+  btn.disabled = true; btn.textContent = 'Đang lưu…'; $('editErr').textContent = '';
+  post({action:'update', password: adminPassword, row: row}).then(d => {
+    if (!d.success){ $('editErr').textContent = d.message; return; }
+    closeEdit(); loadList(); loadStatus();
+  }).catch(() => { $('editErr').textContent = 'Lỗi kết nối.'; })
+  .finally(() => { btn.disabled = false; btn.textContent = 'Lưu'; });
+}
+
+/* ===== Xóa ===== */
+function deleteOne(ma){
+  if (!confirm('Xóa người này khỏi danh sách chi hội?')) return;
+  post({action:'delete', password: adminPassword, ma: ma}).then(d => {
+    if (!d.success){ alert(d.message); return; }
+    loadList(); loadStatus();
+  }).catch(() => alert('Lỗi kết nối.'));
+}
+function deleteSelected(){
+  const list = getSelected();
+  if (!list.length){ alert('Chưa chọn người nào.'); return; }
+  if (!confirm('Xóa ' + list.length + ' người đã chọn?')) return;
+  post({action:'deleteMany', password: adminPassword, maList: list}).then(d => {
+    if (!d.success){ alert(d.message); return; }
+    loadList(); loadStatus();
+  }).catch(() => alert('Lỗi kết nối.'));
+}
+function deleteAllRows(){
+  if (!currentRows.length){ alert('Danh sách đang trống.'); return; }
+  if (!confirm('XÓA TOÀN BỘ ' + currentRows.length + ' người?\nKhông thể hoàn tác!')) return;
+  post({action:'deleteAll', password: adminPassword}).then(d => {
+    if (!d.success){ alert(d.message); return; }
+    loadList(); loadStatus();
+  }).catch(() => alert('Lỗi kết nối.'));
+}
+
+/* ===== Kiểm tra phường ===== */
+async function callPhuong(payload){
+  const res = await fetch(PHUONG_URL, {
+    method: 'POST',
+    headers: {'Content-Type': 'text/plain;charset=utf-8'},
+    body: JSON.stringify(payload)
+  });
+  const text = await res.text();
+  try { return JSON.parse(text); }
+  catch(e){ throw new Error('Phường trả về dữ liệu không hợp lệ'); }
+}
+async function checkPhuong(){
+  const info = $('phuongInfo');
+  info.className = 'transfer-info';
+  info.textContent = 'Đang kiểm tra danh sách phường đã nhận…';
+  try {
+    const d = await callPhuong({action:'status'});
+    if (!d.success) throw new Error('status');
+    const daCo = (d.counts && d.counts[CHI_HOI]) || 0;
+    const max = d.max || 5;
+    const conLai = Math.max(0, max - daCo);
+    if (conLai > 0){
+      info.className = 'transfer-info ok';
+      info.innerHTML = '✓ Phường đã nhận <b>' + daCo + '/' + max + '</b> người của chi hội — còn <b>' + conLai + '</b> slot.';
+    } else {
+      info.className = 'transfer-info warn';
+      info.innerHTML = '⚠ Phường đã nhận đủ <b>' + max + '/' + max + '</b> người của chi hội.';
+    }
+  } catch(e){
+    info.className = 'transfer-info err';
+    info.innerHTML = '✗ Không lấy được trạng thái từ phường. Kiểm tra kết nối mạng.';
+  }
+}
+
+/* ===== Gửi cho phường ===== */
+async function transferSelected(){
+  const list = getSelected();
+  if (!list.length){ alert('Chưa chọn người nào.'); return; }
+
+  if (!confirm('Gửi ' + list.length + ' người cho phường?\nLưu ý: phường chỉ nhận tối đa 5 người/chi hội.')) return;
+
+  const btn = $('btnTransfer');
+  const res = $('transferResult');
+  res.className = 'transfer-result'; res.style.display = 'none'; res.textContent = '';
+  btn.disabled = true;
+
+  const rows = currentRows.filter(r => list.includes(String(r[0])));
+  const okList = [], failList = [];
+
+  for (let i = 0; i < rows.length; i++){
+    const r = rows[i];
+    btn.textContent = 'Đang gửi ' + (i+1) + '/' + rows.length + '…';
+    const payload = {
+      chiHoi: CHI_HOI,
+      nguoi: [{
+        hoTen: r[1], ngaySinh: r[2], cccd: r[3], sdt: r[4],
+        toDanPho: r[5], phuong: r[6], tienSuBenh: r[7], tienSuSanKhoa: r[8],
+        daTamSoat: r[9], lanGanNhat: r[10], ketQua: r[11], idSo: r[12]
+      }]
+    };
+    try {
+      const d = await callPhuong(payload);
+      if (d.success) okList.push(r[0]);
+      else failList.push({hoTen: r[1], message: d.message || 'Không rõ lỗi'});
+    } catch(e){
+      failList.push({hoTen: r[1], message: 'Lỗi kết nối tới phường'});
+    }
+  }
+
+  if (okList.length){
+    try { await post({action:'markTransferred', password: adminPassword, maList: okList}); }
+    catch(e){ console.error(e); }
+  }
+
+  let msg = 'Kết quả gửi:\n';
+  msg += '• Thành công: ' + okList.length + ' người' + (okList.length ? ' (đã đánh dấu "Đã chuyển")' : '') + '\n';
+  msg += '• Thất bại: ' + failList.length + ' người';
+  if (failList.length){
+    msg += '\n\nChi tiết lỗi:\n' + failList.map(x => '• ' + x.hoTen + ': ' + x.message).join('\n');
+  }
+  res.className = 'transfer-result ' + (failList.length ? (okList.length ? 'warn' : 'err') : 'ok');
+  res.textContent = msg;
+  res.scrollIntoView({behavior:'smooth', block:'nearest'});
+
+  btn.textContent = 'Gửi cho phường';
+  loadList(); loadStatus(); checkPhuong();
+}
+
+async function clearTransferredSelected(){
+  const list = getSelected();
+  if (!list.length){ alert('Chưa chọn người nào.'); return; }
+  if (!confirm('Bỏ đánh dấu "Đã chuyển" cho ' + list.length + ' người?\n(Dùng khi cần gửi lại hoặc sửa dữ liệu.)')) return;
+  post({action:'clearTransferred', password: adminPassword, maList: list}).then(d => {
+    if (!d.success){ alert(d.message); return; }
+    loadList(); loadStatus();
+  }).catch(() => alert('Lỗi kết nối.'));
+}
+
+/* ===== Khởi động ===== */
+loadStatus();
+</script>
+</body>
+</html>
